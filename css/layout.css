@@ -1,3 +1,49 @@
-body {
-  margin: 0;
+.header {
+  display: flex;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  z-index: 1000;
+}
+.header .logo {
+  position: absolute;
+  left: 50px;
+}
+.header .logo a {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.header .gnb .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.header .gnb .list li a {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+.header .util-menu {
+  display: flex;
+  position: absolute;
+  right: 50px;
+  position: absolute;
+  height: 80px;
+  align-items: center;
+  gap: 20px;
+}
+.header .util-menu .language-box .list {
+  display: none;
+}
+.header .util-menu .btu_menu btn {
+  display: flex;
+  padding: 0;
 }
