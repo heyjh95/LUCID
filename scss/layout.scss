@@ -6,32 +6,34 @@
   top: 20px;
   right: 20px;
   left: 20px;
+  z-index: 1000;
   justify-content: center;
   background-color: #fff;
   border-radius: 20px;
-  z-index: 1000;
   .logo {
     position: absolute;
     left: 50px;
     a {
-      height: $header-height;
       display: flex;
       align-items: center;
+      height: $header-height;
     }
   }
   .gnb {
     .list {
       display: flex;
-      justify-content: center;
+      position: relative;
+      z-index: 99;
       align-items: center;
+      justify-content: center;
       font-size: 18px;
       font-weight: 600;
       // gap: 0 30px;
       li {
         a {
-          height: $header-height;
           display: flex;
           align-items: center;
+          height: $header-height;
           padding: 0 30px;
         }
       }
@@ -41,20 +43,201 @@
     display: flex;
     position: absolute;
     right: 50px;
-    position: absolute;
-    height: $header-height;
     align-items: center;
     gap: 20px;
+    height: $header-height;
     .language-box {
       .list {
         display: none;
       }
     }
     .btu_menu {
-      btn {
+      .btn {
         display: flex;
         padding: 0;
       }
     }
+  }
+}
+.main-visual {
+  .mask {
+    overflow: hidden;
+    .visual01 {
+      video {
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+      }
+    }
+    .visual02 {
+      height: 80vh;
+      background-image: url(../images/main/main_visual1.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.container {
+  width: calc(100% - 200px);
+  margin: auto;
+}
+.heading02 {
+  margin-bottom: 30px;
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 700;
+}
+.heading03 {
+  font-size: clamp(24px, 2.4vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section02 {
+  z-index: 0;
+  overflow: hidden;
+  padding: 100px 0;
+  background-color: $bg-color;
+  .sec2_bg {
+    position: absolute;
+    top: -19%;
+    right: 0%;
+    z-index: 0;
+    width: 1218px;
+    aspect-ratio: 1218 / 628;
+    overflow: hidden;
+    pointer-events: none;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: multiply;
+    }
+  }
+  .container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    .title-box {
+      position: absolute;
+      left: 0;
+      p {
+        margin: 30px 0;
+        font-size: 18px;
+        color: $light-gray;
+      }
+    }
+    .img-box {
+      width: clamp(200px, 30vw, 800px);
+      // height: calc(100vh - 100px);
+      aspect-ratio: 1/1.4;
+      overflow: hidden;
+      border-radius: 50px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .list {
+      position: absolute;
+      right: 0;
+      font-size: 30px;
+      font-weight: 500;
+      li {
+        margin-bottom: 20px;
+        a {
+          display: inline-block;
+          // a는 display: inline; after가 먹지 않는다. 만약 block을 주면 부모 넓이 따라가므로 width:100%가 된다.
+          // 이 때 자기 자신만큼의 넓이를 가지면서 block요소로 바꿔주는게 inline-block이다.
+          &:after {
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: $dark-gray;
+            content: "";
+            transition: all 0.3s ease-in;
+          }
+          &:hover:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .rolling-txt {
+    display: flex;
+    width: max-content;
+    font-size: clamp(60px, 10vw, 200px);
+    white-space: nowrap;
+    color: #fff;
+    animation: marquee 20s linear infinite;
+    div {
+      flex-shrink: 0;
+      padding-right: clamp(20px, 5vw, 60px);
+    }
+  }
+}
+
+.section03 {
+  padding: 200px 0;
+  background-color: rgb(19, 75, 143);
+  background-image: url(../images/main/sec3_bgIcon.png);
+  background-position: left 0 top 200px;
+  background-repeat: no-repeat;
+
+  .list {
+    display: flex;
+    gap: 20px;
+    li {
+      padding: 50px;
+      border-radius: 50px;
+      background-color: #eeedf2;
+      flex-basis: 25%;
+      display: flex;
+      flex-direction: column;
+      width: calc(25% - 15px);
+      min-height: 500px;
+      transition: all 0.4s ease;
+      .upper {
+        display: block;
+        font-size: var(--fz-24);
+        font-weight: 500;
+        line-height: 1;
+        color: rgb(0, 73, 154);
+      }
+      .lower {
+        margin-top: 90px;
+        padding: 0px 40px;
+
+        .title {
+          font-size: clamp(28px, 2.08vw, 40px);
+          font-weight: 500;
+        }
+      }
+      p {
+        margin-top: 20px;
+        font-size: var(--fz-20);
+        line-height: 1.5;
+        color: rgba($color: #000000, $alpha: 0.7);
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

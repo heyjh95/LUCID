@@ -29,6 +29,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite,home,search,settings,menu"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="../css/_reset.css" />
     <link rel="stylesheet" href="../css/layout.min.css" />
   </head>
@@ -36,7 +38,7 @@
     <header class="header">
       <h1 class="logo">
         <a href="#">
-          <img src="../images/common/logo.png" alt="" />
+          <img src="../images/common/logo.png" alt="LUCID KOREA" />
         </a>
       </h1>
       <nav class="gnb">
@@ -65,17 +67,130 @@
         </div>
       </div>
     </header>
-    <section class="main-visual"></section>
-      <div class="mask">
+    <section class="main-visual">
+      <div class="mask swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide visual01">
-            <video src="../images/main/main_video.mp4" autoplay muted loop></video>
+            <video src="../images/main/main_video.mp4" autoplay muted loop playsinline></video>
           </div>
           <div class="swiper-slide visual02">
-            <img src="../images/main/main_visual1.png" alt="" />
+            <!-- <img src="../images/main/main_visual1.png" alt="" /> -->
           </div>
         </div>
+        <div class="pagination swiper-pagination"></div>
       </div>
     </section>
+    <section class="section02">
+      <div class="sec2_bg"><img src="../images/main/sec2_bg.png" alt="" /></div>
+      <div class="container">
+        <div class="title-box">
+          <h2 class="heading02">Ortho-K</h2>
+          <h3 class="heading03">
+            수면 중 착용하는 <br />
+            시력교정렌즈
+          </h3>
+          <p>
+            수면 중 착용하여 각막의 형태를 부드럽게 교정해, <br />
+            낮 동안 선명한 시력을 유지하도록 돕는<br />
+            연속착용하드콘택트렌즈입니다.
+          </p>
+        </div>
+        <div class="img-box">
+          <img src="../images/main/sec2_img1.jpg" alt="" />
+        </div>
+        <ul class="list">
+          <li>
+            <a href="">Lucid Prime 렌즈</a>
+          </li>
+          <li>
+            <a href="">LK 렌즈</a>
+          </li>
+          <li>
+            <a href="">Ortho-K LK-Lens PREMIER 렌즈</a>
+          </li>
+          <li>
+            <a href=""> Ortho-K LK-Lens Toric PREMIER 렌즈 </a>
+          </li>
+        </ul>
+      </div>
+      <div class="rolling-txt">
+        <div>LUCID KOREA</div>
+        <div>LUCID KOREA</div>
+        <div>LUCID KOREA</div>
+        <div>LUCID KOREA</div>
+      </div>
+    </section>
+    <section class="section03">
+      <div class="container">
+        <div class="title-box">
+          <h2 class="heading02">RGP렌즈</h2>
+          <h3 class="heading03">편안한 착용이 선명한 하루</h3>
+          <p>정교한 비구면 설계로 착용감을 높이고 다양한 시력 보정에 적합한 루시드코리아 RGP 라인업입니다</p>
+          <span class="">* 단 개인차가 있음</span>
+        </div>
+
+        <ul class="list">
+          <li>
+            <a href="">
+              <div class="upper">
+                <h3 class="category">일반시력교정</h3>
+                <span><img src="../images/main/sec3_icon1.svg" alt="" /></span>
+              </div>
+              <div class="lower">
+                <h2 class="title">Extra 렌즈</h2>
+                <p>넓은 광학부와 정교한 주변부 디자인으로 맑고 선명한 시야를 제공하는 비구면 RGP 렌즈입니다.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="upper">
+                <h3 class="category">일반시력교정</h3>
+                <span><img src="../images/main/sec3_icon1.svg" alt="" /></span>
+              </div>
+              <div class="lower">
+                <h2 class="title">Advance 렌즈</h2>
+                <p>
+                  얇은 디자인과 독립된 광학부, <br class="pcbr" />편안하고 안정적인 착용감을 제공하는 구면 RGP
+                  렌즈입니다.
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="upper">
+                <h3 class="category">일반시력교정</h3>
+                <span><img src="../images/main/sec3_icon2.svg" alt="" /></span>
+              </div>
+              <div class="lower">
+                <h2 class="title">Extra 렌즈</h2>
+                <p>넓은 광학부와 정교한 주변부 디자인으로 맑고 선명한 시야를 제공하는 비구면 RGP 렌즈입니다.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="upper">
+                <h3 class="category">일반시력교정</h3>
+                <span><img src="../images/main/sec3_icon2.svg" alt="" /></span>
+              </div>
+              <div class="lower">
+                <h2 class="title">Extra 렌즈</h2>
+                <p>넓은 광학부와 정교한 주변부 디자인으로 맑고 선명한 시야를 제공하는 비구면 RGP 렌즈입니다.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      const mainSlider = new Swiper(".main-visual .mask", {
+        pagination: {
+          el: ".main-visual .pagination",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
